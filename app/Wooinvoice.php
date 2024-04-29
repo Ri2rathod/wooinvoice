@@ -1,6 +1,7 @@
 <?php
 namespace Wooinvoice ;
 
+
 /**
  * The file that defines the core plugin class
  *
@@ -78,6 +79,9 @@ class Wooinvoice {
 
 		$this->set_locale();
 
+
+		$this->load_admin();
+
 	}
 
 	/**
@@ -153,6 +157,14 @@ class Wooinvoice {
 	 */
 	public function get_version() {
 		return $this->version;
+	}
+
+	public function load_admin()  {
+		
+
+
+		$this->loader->add_filter('woocommerce_email_setting_columns',WooinvoiceLoadWoocommerce::instance(),'wooinvoice_add_column_email_settings');
+		$this->loader->add_action('woocommerce_email_setting_column_wooinvoice-elementor-editor',WooinvoiceLoadWoocommerce::instance(),'wooinvoice_add_column_email_settings');
 	}
 
 }
