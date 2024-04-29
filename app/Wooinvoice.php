@@ -1,4 +1,5 @@
 <?php
+namespace Wooinvoice ;
 
 /**
  * The file that defines the core plugin class
@@ -73,11 +74,9 @@ class Wooinvoice {
 			$this->version = '1.0.0';
 		}
 		$this->plugin_name = 'wooinvoice';
+		$this->loader = new Wooinvoice_Loader();
 
-		$this->load_dependencies();
 		$this->set_locale();
-		$this->define_admin_hooks();
-		$this->define_public_hooks();
 
 	}
 
@@ -97,34 +96,7 @@ class Wooinvoice {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function load_dependencies() {
-
-		/**
-		 * The class responsible for orchestrating the actions and filters of the
-		 * core plugin.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wooinvoice-loader.php';
-
-		/**
-		 * The class responsible for defining internationalization functionality
-		 * of the plugin.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wooinvoice-i18n.php';
-
-		/**
-		 * The class responsible for defining all actions that occur in the admin area.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wooinvoice-admin.php';
-
-		/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wooinvoice-public.php';
-
-		$this->loader = new Wooinvoice_Loader();
-
-	}
+	
 
 	/**
 	 * Define the locale for this plugin for internationalization.
@@ -140,38 +112,6 @@ class Wooinvoice {
 		$plugin_i18n = new Wooinvoice_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
-	}
-
-	/**
-	 * Register all of the hooks related to the admin area functionality
-	 * of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function define_admin_hooks() {
-
-		$plugin_admin = new Wooinvoice_Admin( $this->get_plugin_name(), $this->get_version() );
-
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-
-	}
-
-	/**
-	 * Register all of the hooks related to the public-facing functionality
-	 * of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function define_public_hooks() {
-
-		$plugin_public = new Wooinvoice_Public( $this->get_plugin_name(), $this->get_version() );
-
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 	}
 

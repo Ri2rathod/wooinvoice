@@ -1,4 +1,5 @@
 <?php
+namespace Wooinvoice ;
 
 /**
  * Fired during plugin activation

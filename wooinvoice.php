@@ -25,6 +25,10 @@
  * Domain Path:       /languages
  */
 
+use Wooinvoice\Wooinvoice;
+use Wooinvoice\Wooinvoice_Activator;
+use Wooinvoice\Wooinvoice_Deactivator;
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
@@ -37,12 +41,22 @@ if ( ! defined( 'WPINC' ) ) {
  */
 define( 'WOOINVOICE_VERSION', '1.0.0' );
 
+
+// Require once the Composer Autoload
+if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
+	require_once dirname( __FILE__ ) . '/vendor/autoload.php';
+} else {
+	die( 'Something went wrong' );
+}
+
+
+
+
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-wooinvoice-activator.php
  */
 function activate_wooinvoice() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wooinvoice-activator.php';
 	Wooinvoice_Activator::activate();
 }
 
@@ -51,18 +65,11 @@ function activate_wooinvoice() {
  * This action is documented in includes/class-wooinvoice-deactivator.php
  */
 function deactivate_wooinvoice() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wooinvoice-deactivator.php';
 	Wooinvoice_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_wooinvoice' );
 register_deactivation_hook( __FILE__, 'deactivate_wooinvoice' );
-
-/**
- * The core plugin class that is used to define internationalization,
- * admin-specific hooks, and public-facing site hooks.
- */
-require plugin_dir_path( __FILE__ ) . 'includes/class-wooinvoice.php';
 
 /**
  * Begins execution of the plugin.

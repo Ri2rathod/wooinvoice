@@ -1,5 +1,6 @@
 <?php
 
+namespace Wooinvoice ;
 /**
  * Register all actions and filters for the plugin
  *

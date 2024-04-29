@@ -1,5 +1,6 @@
 <?php
 
+namespace Wooinvoice ;
 /**
  * Define the internationalization functionality
  *

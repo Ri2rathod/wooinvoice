@@ -1,0 +1,18 @@
+{
+    "name": "ri2/wooinvoice",
+    "type": "project",
+    "license": "GNU",
+    "autoload": {
+        "psr-4": {
+            "Wooinvoice\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ritesh Rathod",
+            "email": "ritesh.rathod@goldenmace.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
