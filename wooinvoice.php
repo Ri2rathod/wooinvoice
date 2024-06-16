@@ -26,8 +26,8 @@
  */
 
 use Wooinvoice\Wooinvoice;
-use Wooinvoice\Wooinvoice_Activator;
-use Wooinvoice\Wooinvoice_Deactivator;
+use Wooinvoice\WooinvoiceActivator;
+use Wooinvoice\WooinvoiceDeactivator;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -57,7 +57,7 @@ if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
  * This action is documented in includes/class-wooinvoice-activator.php
  */
 function activate_wooinvoice() {
-	Wooinvoice_Activator::activate();
+	WooinvoiceActivator::activate();
 }
 
 /**
@@ -65,7 +65,7 @@ function activate_wooinvoice() {
  * This action is documented in includes/class-wooinvoice-deactivator.php
  */
 function deactivate_wooinvoice() {
-	Wooinvoice_Deactivator::deactivate();
+	WooinvoiceDeactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_wooinvoice' );

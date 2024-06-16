@@ -14,5 +14,8 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "deliciousbrains/wp-migrations": "dev-master",
+        "10quality/wp-query-builder": "^1.0"
+    }
 }

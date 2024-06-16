@@ -1,6 +1,8 @@
 <?php
 namespace Wooinvoice ;
 
+use DeliciousBrains\WPMigrations\Database\Migrator;
+
 /**
  * Fired during plugin activation
  *
@@ -21,7 +23,7 @@ namespace Wooinvoice ;
  * @subpackage Wooinvoice/includes
  * @author     Ri2Rathod <rathodriteshrock@gmail.com>
  */
-class Wooinvoice_Activator {
+class WooinvoiceActivator {
 
 	/**
 	 * Short Description. (use period)
@@ -31,6 +33,9 @@ class Wooinvoice_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
+		$migrate =  Migrator::instance();
+		$migrate->setup();
+		$migrate->run();
 
 	}
 

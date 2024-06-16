@@ -160,11 +160,10 @@ class Wooinvoice {
 	}
 
 	public function load_admin()  {
-		
 
-
-		$this->loader->add_filter('woocommerce_email_setting_columns',WooinvoiceLoadWoocommerce::instance(),'wooinvoice_add_column_email_settings');
-		$this->loader->add_action('woocommerce_email_setting_column_wooinvoice-elementor-editor',WooinvoiceLoadWoocommerce::instance(),'wooinvoice_add_column_email_settings');
+		// $this->loader->add_filter('woocommerce_email_setting_columns',WooinvoiceLoadWoocommerce::instance(),'wooinvoice_add_column_email_settings');
+		// $this->loader->add_action('woocommerce_email_setting_column_wooinvoice-elementor-editor',WooinvoiceLoadWoocommerce::instance(),'wooinvoice_add_column_email_settings');
+		$this->loader->add_action('init',WooinvoiceInit::instance(),'wooinvoice_add_sidebar');
 	}
 
 }

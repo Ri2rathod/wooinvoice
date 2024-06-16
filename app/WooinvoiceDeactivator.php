@@ -21,7 +21,7 @@ namespace Wooinvoice ;
  * @subpackage Wooinvoice/includes
  * @author     Ri2Rathod <rathodriteshrock@gmail.com>
  */
-class Wooinvoice_Deactivator {
+class WooinvoiceDeactivator {
 
 	/**
 	 * Short Description. (use period)
