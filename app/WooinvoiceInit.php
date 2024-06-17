@@ -63,14 +63,14 @@ class WooinvoiceInit
         html.wp-toolbar { padding-top: 0px !important; }
         #adminmenuback, #adminmenuwrap, #wpadminbar, #wpfooter,#adminmenumain, #screen-meta { display: none !important; }
         #wpcontent .notice { display:none; }');
-
+        wp_enqueue_style('wooinvoice-dashbord-helper');
         enqueue_asset(
             WOOINVOICE_PLUGIN_PATH . 'dist',
             'src/main.jsx',
             [
                 'handle' => 'wooinvoice-dashbord',
                 'dependencies' => [],
-                'css-dependencies' => ['wooinvoice-dashbord-helper'],
+                'css-dependencies' => [],
                 'css-media' => 'all',
                 'css-only' => false,
                 'in-footer' => false,

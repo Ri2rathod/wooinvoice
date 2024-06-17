@@ -1,5 +1,6 @@
 import { v4wp } from '@kucrut/vite-for-wp';
 import reactRefresh from '@vitejs/plugin-react';
+import path from 'path';
 
 
 
@@ -22,5 +23,10 @@ export default {
       }),
     }
  
-  ]
+  ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 };
