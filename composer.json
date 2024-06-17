@@ -16,6 +16,7 @@
     "minimum-stability": "dev",
     "require": {
         "deliciousbrains/wp-migrations": "dev-master",
-        "10quality/wp-query-builder": "^1.0"
+        "10quality/wp-query-builder": "^1.0",
+        "kucrut/vite-for-wp": "dev-main"
     }
 }

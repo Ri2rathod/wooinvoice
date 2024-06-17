@@ -47,9 +47,9 @@ class WooinvoiceListTableClass extends WP_List_Table {
     }
     public function column_action($item) {
         return sprintf(
-            '<button type="button" class="button button-primary" data-id="%s">Edit</button>
+            '<a type="button" class="button button-primary" href="%s">Edit</a>
             <button type="button" class="button button-danger" data-id="%s">Delete</button>',
-             $item['id'],$item['id']
+             admin_url("admin.php?page=wooinvoice-builder&id={$item['id']}"),$item['id']
         );
     }
 

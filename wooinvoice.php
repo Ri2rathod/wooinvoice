@@ -41,6 +41,23 @@ if ( ! defined( 'WPINC' ) ) {
  */
 define( 'WOOINVOICE_VERSION', '1.0.0' );
 
+// Plugin name
+define( 'WOOINVOICE_NAME', 'WooInvoice' );
+
+
+// Plugin Root File
+define( 'WOOINVOICE_PLUGIN_FILE',	__FILE__ );
+
+// Plugin base
+define( 'WOOINVOICE_PLUGIN_BASE',	plugin_basename( WOOINVOICE_PLUGIN_FILE ) );
+
+// Plugin Folder Path
+define( 'WOOINVOICE_PLUGIN_PATH',	plugin_dir_path( WOOINVOICE_PLUGIN_FILE ) );
+
+// Plugin Folder URL
+define( 'WOOINVOICE_PLUGIN_URL',	plugin_dir_url( WOOINVOICE_PLUGIN_FILE ) );
+
+
 
 // Require once the Composer Autoload
 if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd8d81eed7056b64a4bd6da5b1ea50b2",
+    "content-hash": "b53d3cc65b69b9aef2b5d95658e1b797",
     "packages": [
         {
             "name": "10quality/php-data-model",
@@ -162,6 +162,46 @@
                 "source": "https://github.com/deliciousbrains/wp-migrations/tree/2.1"
             },
             "time": "2023-05-04T14:43:29+00:00"
+        },
+        {
+            "name": "kucrut/vite-for-wp",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kucrut/vite-for-wp.git",
+                "reference": "cc5dfb08d0a48730ff62aa3c30074b0f0a36808a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kucrut/vite-for-wp/zipball/cc5dfb08d0a48730ff62aa3c30074b0f0a36808a",
+                "reference": "cc5dfb08d0a48730ff62aa3c30074b0f0a36808a",
+                "shasum": ""
+            },
+            "require-dev": {
+                "wp-coding-standards/wpcs": "^3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "vite-for-wp.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Dzikri Aziz"
+                }
+            ],
+            "description": "Vite integration for WordPress plugins and themes development.",
+            "support": {
+                "issues": "https://github.com/kucrut/vite-for-wp/issues",
+                "source": "https://github.com/kucrut/vite-for-wp/tree/v0.9.1"
+            },
+            "time": "2024-06-13T15:52:35+00:00"
         },
         {
             "name": "mustache/mustache",
