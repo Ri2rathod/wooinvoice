@@ -17,6 +17,7 @@
     "require": {
         "deliciousbrains/wp-migrations": "dev-master",
         "10quality/wp-query-builder": "^1.0",
-        "kucrut/vite-for-wp": "dev-main"
+        "kucrut/vite-for-wp": "dev-main",
+        "bitapps/wp-validator": "^1.0@dev"
     }
 }

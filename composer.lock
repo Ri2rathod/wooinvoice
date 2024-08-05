@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b53d3cc65b69b9aef2b5d95658e1b797",
+    "content-hash": "d8a8c836f25987d63d383b188cc320cf",
     "packages": [
         {
             "name": "10quality/php-data-model",
@@ -120,6 +120,65 @@
                 "source": "https://github.com/10quality/wp-query-builder/tree/v1.0"
             },
             "time": "2023-02-09T02:29:19+00:00"
+        },
+        {
+            "name": "bitapps/wp-validator",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Bit-Apps-Pro/wp-validator.git",
+                "reference": "9d29785718350c4fed8d9b16989175ce86f6343c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Bit-Apps-Pro/wp-validator/zipball/9d29785718350c4fed8d9b16989175ce86f6343c",
+                "reference": "9d29785718350c4fed8d9b16989175ce86f6343c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "pestphp/pest": "^2.18",
+                "phpcompatibility/php-compatibility": "*",
+                "squizlabs/php_codesniffer": "*"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BitApps\\WPValidator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "BitApps",
+                    "email": "developer@bitcode.pro"
+                }
+            ],
+            "description": "WordPress Validation and Sanitization Library",
+            "homepage": "https://bitapps.pro",
+            "keywords": [
+                "form-validation",
+                "input-sanitization",
+                "input-validation",
+                "php-validation",
+                "validation"
+            ],
+            "support": {
+                "issues": "https://github.com/Bit-Apps-Pro/wp-validator/issues",
+                "source": "https://github.com/Bit-Apps-Pro/wp-validator"
+            },
+            "time": "2024-07-25T10:32:42+00:00"
         },
         {
             "name": "deliciousbrains/wp-migrations",
@@ -508,7 +567,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "deliciousbrains/wp-migrations": 20
+        "deliciousbrains/wp-migrations": 20,
+        "kucrut/vite-for-wp": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

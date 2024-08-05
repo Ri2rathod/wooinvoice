@@ -1,6 +1,7 @@
 <?php
 namespace Wooinvoice ;
 
+use Wooinvoice\routes\Wooinvoice_Routes_Handler;
 
 /**
  * The file that defines the core plugin class
@@ -76,6 +77,9 @@ class Wooinvoice {
 		}
 		$this->plugin_name = 'wooinvoice';
 		$this->loader = new Wooinvoice_Loader();
+		if(wp_doing_ajax()){
+			$this->load_api();
+		}
 
 		$this->set_locale();
 
@@ -161,9 +165,10 @@ class Wooinvoice {
 
 	public function load_admin()  {
 
-		// $this->loader->add_filter('woocommerce_email_setting_columns',WooinvoiceLoadWoocommerce::instance(),'wooinvoice_add_column_email_settings');
-		// $this->loader->add_action('woocommerce_email_setting_column_wooinvoice-elementor-editor',WooinvoiceLoadWoocommerce::instance(),'wooinvoice_add_column_email_settings');
 		$this->loader->add_action('init',WooinvoiceInit::instance(),'wooinvoice_add_sidebar');
+	}
+	public function load_api():void {
+		new Wooinvoice_Routes_Handler();
 	}
 
 }
