@@ -29,7 +29,7 @@ export default function Header() {
               </Button >
               <Button className="bg-gray-50 text-black "> Publish </Button>
               <span className='p-2'>
-                <img class="w-10 h-10 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="Rounded avatar"></img>
+                <img className="w-10 h-10 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="Rounded avatar"></img>
               </span>
             </div>
 

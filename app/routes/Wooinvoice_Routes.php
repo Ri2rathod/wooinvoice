@@ -18,9 +18,9 @@ abstract class Wooinvoice_Routes
             'wooinvoice_route_lists',
             array(
                 'get_data' => [
-                    'method' => 'post',
+                    'method' => 'get',
                     'action' => 'Wooinvoice_Home_Controller@get_test',
-                    "nonce" => 0,
+                    "nonce" => 1,
                     'args' => [
                         'first_name' => ['required', 'string','sanitize:text'],
                         'last_name' => ['required', 'string','sanitize:text'],
@@ -28,6 +28,15 @@ abstract class Wooinvoice_Routes
                         'password' => ['required', 'min:8'],
                         'confirm_password' => ['required', 'min:8', 'same:password'],
                         'file_name' => ['required']
+                    ]
+                    ],
+                'get_data' => [
+                    'method' => 'post',
+                    'action' => 'Wooinvoice_Home_Controller@get_test',
+                    "nonce" => 1,
+                    'args' => [
+                        'first_name' => ['required', 'string','sanitize:text'],
+                     
                     ]
                 ]
             )

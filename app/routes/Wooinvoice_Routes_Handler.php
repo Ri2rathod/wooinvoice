@@ -35,7 +35,7 @@ final class Wooinvoice_Routes_Handler extends Wooinvoice_Routes
 
 				if ($route['nonce'] === 1) :
 					//verify request nonce
-					if ( !wp_verify_nonce($_REQUEST['_ajax_nonce']??'', 'ajax_post') && !is_user_logged_in()) :
+					if ( !wp_verify_nonce($_REQUEST['_ajax_nonce']??'', 'wooinvoice_ajax_nonce') || !is_user_logged_in()) :
 						$error = __('Invalid nonce in request', 'wpbookit');
 						throw new Exception($error, 419);
 					endif;

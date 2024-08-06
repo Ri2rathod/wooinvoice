@@ -1,4 +1,5 @@
 import React from 'react'
+import {__} from '@wordpress/i18n'
 import {
   Accordion,
   AccordionContent,
@@ -19,7 +20,7 @@ export default function Aside() {
         <div className='px-8 py-6 flex flex-col items-center justify-between h-full bg-slate-800 -mt-16'>
           <div className="banding">
             <span className=''>
-              <img class="w-10 h-10 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="Rounded avatar"></img>
+              <img className="w-10 h-10 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="Rounded avatar"></img>
             </span>
           </div>
           <div className="navigation">
@@ -78,7 +79,7 @@ export default function Aside() {
            
             <Accordion type="single" collapsible className="w-full ">
               <AccordionItem value="item-1">
-                <AccordionTrigger className='px-2' >Navigation</AccordionTrigger>
+                <AccordionTrigger className='px-2' >{__("Navigation",'wooinvoice')}</AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
