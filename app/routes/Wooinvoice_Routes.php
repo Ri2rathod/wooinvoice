@@ -17,28 +17,41 @@ abstract class Wooinvoice_Routes
         $this->routes = apply_filters(
             'wooinvoice_route_lists',
             array(
-                'get_data' => [
+                'get_config' => [
                     'method' => 'get',
-                    'action' => 'Wooinvoice_Home_Controller@get_test',
+                    'action' => 'Wooinvoice_Home_Controller@get_config',
                     "nonce" => 1,
                     'args' => [
-                        'first_name' => ['required', 'string','sanitize:text'],
-                        'last_name' => ['required', 'string','sanitize:text'],
-                        'email' => ['required', 'email', 'sanitize:email'],
-                        'password' => ['required', 'min:8'],
-                        'confirm_password' => ['required', 'min:8', 'same:password'],
-                        'file_name' => ['required']
+                        // 'first_name' => ['required', 'string','sanitize:text'],
+                        // 'last_name' => ['required', 'string','sanitize:text'],
+                        // 'email' => ['required', 'email', 'sanitize:email'],
+                        // 'password' => ['required', 'min:8'],
+                        // 'confirm_password' => ['required', 'min:8', 'same:password'],
+                        // 'file_name' => ['required']
                     ]
                     ],
-                'get_data' => [
-                    'method' => 'post',
-                    'action' => 'Wooinvoice_Home_Controller@get_test',
-                    "nonce" => 1,
-                    'args' => [
-                        'first_name' => ['required', 'string','sanitize:text'],
+                // 'get_data' => [
+                //     'method' => 'get',
+                //     'action' => 'Wooinvoice_Home_Controller@get_test',
+                //     "nonce" => 1,
+                //     'args' => [
+                //         'first_name' => ['required', 'string','sanitize:text'],
+                //         'last_name' => ['required', 'string','sanitize:text'],
+                //         'email' => ['required', 'email', 'sanitize:email'],
+                //         'password' => ['required', 'min:8'],
+                //         'confirm_password' => ['required', 'min:8', 'same:password'],
+                //         'file_name' => ['required']
+                //     ]
+                //     ],
+                // 'get_data' => [
+                //     'method' => 'post',
+                //     'action' => 'Wooinvoice_Home_Controller@get_test',
+                //     "nonce" => 1,
+                //     'args' => [
+                //         'first_name' => ['required', 'string','sanitize:text'],
                      
-                    ]
-                ]
+                //     ]
+                // ]
             )
         );
     }

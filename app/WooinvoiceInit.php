@@ -62,7 +62,9 @@ class WooinvoiceInit
         wp_add_inline_style('wooinvoice-dashbord-helper', '#wpcontent, #footer { margin-left: 0px !important;padding-left: 0px !important; }
         html.wp-toolbar { padding-top: 0px !important; }
         #adminmenuback, #adminmenuwrap, #wpadminbar, #wpfooter,#adminmenumain, #screen-meta { display: none !important; }
-        #wpcontent .notice { display:none; }');
+        #wpcontent .notice { display:none; }
+        #wpbody-content {padding: 0;
+  margin: 0;}');
         wp_enqueue_style('wooinvoice-dashbord-helper');
         wp_enqueue_style('wooinvoice-dashbord-google-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
         enqueue_asset(

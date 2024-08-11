@@ -2,13 +2,25 @@
 import Layout from './layouts/Layout'
 import { DashboardAPI } from './apis/DashboardAPI'
 import { useQuery } from '@tanstack/react-query';
+import { useEffect } from 'react';
+import { useBuilderConfig } from './lib/ContextAPI';
 
 function App() {
-  const { isPending, error, data, isFetching } = useQuery({
+  const { builderConfig, setBuilderConfig } = useBuilderConfig();
+  const { isSuccess, error, data, isFetching } = useQuery({
     queryKey: ['repoData'],
     queryFn: () => DashboardAPI.get_config(),
+    
   })
+  useEffect(() => {
+    if(isSuccess){
+      setBuilderConfig(data.data)
+    }
+    return () => {
 
+    }
+  }, [data,isSuccess])
+  
 
   return (
     <>

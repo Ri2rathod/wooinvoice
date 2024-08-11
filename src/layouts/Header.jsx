@@ -1,9 +1,14 @@
 import { Button } from '@/components/ui/button'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ChevronLeft, Folder, Play } from 'react-iconly'
-
+import { useBuilderConfig } from '../lib/ContextAPI'
+import { useEffect } from 'react';
 
 
 export default function Header() {
+  const { builderConfig, setBuilderConfig } =  useBuilderConfig();
+  
+  
   return (
     <header className="bg-slate-900  ">
       <div className='w-full px-28'>
@@ -28,9 +33,11 @@ export default function Header() {
                 <Play />
               </Button >
               <Button className="bg-gray-50 text-black "> Publish </Button>
-              <span className='p-2'>
-                <img className="w-10 h-10 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="Rounded avatar"></img>
-              </span>
+              <Avatar >
+                <AvatarImage src={builderConfig?.user?.avatar || "https://github.com/shadcn.png"} />
+                <AvatarFallback>..</AvatarFallback>
+              </Avatar>
+
             </div>
 
           </div>
