@@ -7,7 +7,7 @@ use WP_REST_Request;
 
 abstract class  Wooinvoice_Controller_Handler
 {
-    public $request;
+    public WP_REST_Request $request;
 
     public function __construct($req, $args)
     {

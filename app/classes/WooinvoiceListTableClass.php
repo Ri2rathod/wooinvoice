@@ -89,7 +89,7 @@ class WooinvoiceListTableClass extends WP_List_Table {
             if (!empty($_POST['id'])) {
                 if(is_array($_POST['id'])){
                     foreach ($_POST['id'] as  $value) {
-                        WooinvoiceTemplatesModel::delete_where(['id'=>$value]);
+                        WooinvoiceTemplatesModel::delete_where(['id'=>(int)$value]);
                     }
                 }
                 wp_redirect(add_query_arg());
