@@ -10,7 +10,7 @@ export default function Header() {
   
   
   return (
-    <header className="bg-slate-900  ">
+    <header className="bg-slate-900  fixed top-0 left-0 right-0">
       <div className='w-full px-28'>
         <div className='flex justify-between'>
           <div className='header-navigation flex gap-6 px-2 py-3 align-middle'>

@@ -4,6 +4,7 @@ import { DashboardAPI } from './apis/DashboardAPI'
 import { useQuery } from '@tanstack/react-query';
 import { useEffect } from 'react';
 import { useBuilderConfig } from './lib/ContextAPI';
+import PageContainer from './PageContainer';
 
 function App() {
   const { builderConfig, setBuilderConfig } = useBuilderConfig();
@@ -24,7 +25,9 @@ function App() {
 
   return (
     <>
-      <Layout />
+      <Layout >
+        <PageContainer />
+      </Layout>
     </>
   )
 }

@@ -9,7 +9,7 @@ export default function Layout({children}) {
         <>
             <Header />
             <Aside />
-            <main>
+            <main className='ml-96 mt-24'>
                 {children}
             </main>
             <Footer />
