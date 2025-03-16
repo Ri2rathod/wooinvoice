@@ -8,11 +8,13 @@ import NewElementSidebar from '@/views/NewElementSidebar'
 import { useAutoAnimate } from '@formkit/auto-animate/react';
 
 import { Plus, Chart, AddUser, Setting, Image, EditSquare, InfoCircle, Notification, ChevronLeft } from 'react-iconly'
+import useDashboardBuilderStore from '../state/dashboardBuilderStore'
 
 
 
 export default function Aside() {
 
+  const {isAddingNewWidget,addNewWidget}= useDashboardBuilderStore();
   const [isEdit, setIsEdit] = useState(false);
   const [parent] = useAutoAnimate({
     duration: 300,
@@ -31,7 +33,12 @@ export default function Aside() {
           <div className="navigation">
             <ul className='flex flex-col gap-5'>
               <li>
-                <Button className="bg-transparent p-2 hover:bg-transparent text-slate-200 hover:text-white" >
+                <Button  onClick={()=>{
+                  console.log(this);
+                  
+                  addNewWidget()
+                }}
+                className="bg-transparent p-2 hover:bg-transparent text-slate-200 hover:text-white" >
                   <Plus />
                 </Button>
               </li>
@@ -82,11 +89,7 @@ export default function Aside() {
         <div className='w-full'>
 
           <div ref={parent}>
-            {isEdit ? <EditElementSidebar /> : <NewElementSidebar />}
-
-            <button onClick={() => setIsEdit(!isEdit)}>
-              Toggle Mode
-            </button>
+            {isAddingNewWidget ? <NewElementSidebar /> : <EditElementSidebar />}
           </div>
 
         </div>
